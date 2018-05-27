@@ -30,6 +30,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 
 		// Set up test name and Logger
+		setCurrentThreadName();
 		String testName = ctx.getCurrentXmlTest().getName();
 		log = LogManager.getLogger(testName);
 	}
@@ -40,6 +41,17 @@ public class BaseTest {
 		// Closing driver
 		log.info("[Closing driver]");
 		driver.quit();
+	}
+
+
+	/** Sets thread name which includes thread id */
+	private void setCurrentThreadName() {
+		Thread thread = Thread.currentThread();
+		String threadName = thread.getName();
+		String threadId = String.valueOf(thread.getId());
+		if (!threadName.contains(threadId)) {
+			thread.setName(threadName + " " + threadId);
+		}
 	}
 
 }
