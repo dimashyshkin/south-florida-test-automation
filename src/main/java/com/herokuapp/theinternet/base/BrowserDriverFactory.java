@@ -21,7 +21,7 @@ public class BrowserDriverFactory {
 
 
 	public WebDriver createDriver() {
-		System.out.println("[Setting up local driver: " + browser + "]");
+		System.out.println("Starting " + browser + " locally");
 
 		// Creating driver
 		switch (browser) {
@@ -41,10 +41,9 @@ public class BrowserDriverFactory {
 
 
 	public WebDriver createDriverGrid() {
-		System.out.println("[Setting up grid driver: " + browser + "]");
-
 		String hubUrl = "http://192.168.0.2:4444/wd/hub";
 		DesiredCapabilities capabilities = new DesiredCapabilities();
+		System.out.println("Starting " + browser + " on grid");
 
 		// Creating driver
 		switch (browser) {
