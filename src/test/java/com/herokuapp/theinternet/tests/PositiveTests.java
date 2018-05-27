@@ -30,19 +30,20 @@ public class PositiveTests extends BaseTest {
 		logInButton.click();
 		log.info("Clicked LogIn button.");
 
-		// verifications
-		// new url
+		// Verifications:
+		
+		// 1 - new url
 		String expectedUrl = "http://the-internet.herokuapp.com/secure";
 		String actualUrl = driver.getCurrentUrl();
 		Assert.assertEquals(actualUrl, expectedUrl);
 		log.info("URL verification is complete.");
 
-		// log out button is visible
+		// 2 - log out button is visible
 		WebElement logOutButton = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
 		Assert.assertTrue(logOutButton.isDisplayed(), "logOutButton is not visible.");
 		log.info("Log Out button is visible.");
 
-		// Successful log in message
+		// 3 - Successful log in message
 		WebElement successMessage = driver.findElement(By.id("flash"));
 		String expectedSuccessMessage = "You logged into a secure area!";
 		String actualSuccessMessage = successMessage.getText();
