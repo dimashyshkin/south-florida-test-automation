@@ -14,7 +14,7 @@ public class PositiveTests extends BaseTest {
 		// open the page
 		String url = "http://the-internet.herokuapp.com/login";
 		driver.get(url);
-		System.out.println("Page is opened.");
+		log.info("Page is opened.");
 
 		// enter username
 		WebElement username = driver.findElement(By.id("username"));
@@ -23,20 +23,24 @@ public class PositiveTests extends BaseTest {
 		// enter password
 		WebElement password = driver.findElement(By.id("password"));
 		password.sendKeys("SuperSecretPassword!");
+		log.info("Entered username and password.");
 
 		// push log in button
 		WebElement logInButton = driver.findElement(By.className("radius"));
 		logInButton.click();
+		log.info("Clicked LogIn button.");
 
 		// verifications
 		// new url
 		String expectedUrl = "http://the-internet.herokuapp.com/secure";
 		String actualUrl = driver.getCurrentUrl();
 		Assert.assertEquals(actualUrl, expectedUrl);
+		log.info("URL verification is complete.");
 
 		// log out button is visible
 		WebElement logOutButton = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
 		Assert.assertTrue(logOutButton.isDisplayed(), "logOutButton is not visible.");
+		log.info("Log Out button is visible.");
 
 		// Successful log in message
 		WebElement successMessage = driver.findElement(By.id("flash"));
@@ -45,6 +49,7 @@ public class PositiveTests extends BaseTest {
 		Assert.assertTrue(actualSuccessMessage.contains(expectedSuccessMessage),
 				"actualSuccessMessage does not contain expectedSuccessMessage\nexpectedSuccessMessage: "
 						+ expectedSuccessMessage + "\nactualSuccessMessage: " + actualSuccessMessage);
+		log.info("Successful log in message is correct.");
 	}
 
 }
