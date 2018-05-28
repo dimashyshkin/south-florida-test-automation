@@ -6,6 +6,10 @@
 	<artifactId>selenium-for-beginners</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Selenium for Beginners</name>
+	
+	<properties>
+		<suiteXmlFile>src/test/resources/TestSuites/testng.xml</suiteXmlFile>
+	</properties>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -13,7 +17,6 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -59,7 +62,7 @@
 				<version>2.21.0</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/TestSuites/testng.xml</suiteXmlFile>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
