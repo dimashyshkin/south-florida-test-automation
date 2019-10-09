@@ -1,5 +1,2 @@
-# south-florida-test-automation
-https://www.udemy.com/user/dimashyshkin/
-
-Code from the South Florida Test Automation Presentation
+# Code from the South Florida Test Automation Presentation
 Checkout my Selenium courses here https://www.udemy.com/user/dimashyshkin/
