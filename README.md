@@ -1,5 +1,5 @@
 # Code from the South Florida Test Automation Presentation
-Checkout my Selenium courses here https://www.udemy.com/user/dimashyshkin/
+Checkout my Selenium courses here https://practicetestautomation.com/courses/
 
 Highest rated "Selenium WebDriver with Java for beginners" course - https://www.udemy.com/course/selenium-for-beginners/?referralCode=A21BE51035C15406EFA4/
 
